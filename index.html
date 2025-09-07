@@ -11,10 +11,10 @@
   <h2>Click on themm</h2>
   <marquee>thanks for visiting my corner of the web ✧</marquee>
 
-  <!-- time comparison -->
+  <!-- time more like stupid -->
   <div class="time-box">
-    <p>My Time (EST/EDT): <span id="my-time"></span></p>
-    <p>Your Time: <span id="user-time"></span></p>
+    <p>My Time (EST/EDT): <span id="my-time">loading...</span></p>
+    <p>Your Time: <span id="user-time">loading...</span></p>
   </div>
 
   <details class="section">
@@ -41,20 +41,18 @@
     </ul>
   </details>
 
-  <!-- corner gifs -->
   <img src="images/house-md-love.gif" class="corner-gif top-left">
   <img src="images/pursuer-killer.gif" class="corner-gif top-right">
   <img src="images/artworks-idty4l58QzPrnL34-Q878RA-t500x500.jpg" class="corner-gif bottom-left">
 
-  <!-- time for timing -->
   <script>
     function isDaylightSavings(date) {
       const year = date.getFullYear();
-      const march = new Date(year, 2, 1);
+      const march = new Date(year, 2, 1); 
       const november = new Date(year, 10, 1);
 
-      const dstStart = new Date(year, 2, 1 + (7 - march.getDay()) + 7);
-      const dstEnd = new Date(year, 10, 1 + (7 - november.getDay()));
+      const dstStart = new Date(year, 2, 1 + (7 - march.getDay()) + 7); 
+      const dstEnd = new Date(year, 10, 1 + (7 - november.getDay())); 
 
       return date >= dstStart && date < dstEnd;
     }
@@ -62,16 +60,22 @@
     function updateTimes() {
       const now = new Date();
 
-      document.getElementById("user-time").textContent = now.toLocaleTimeString();
+      const userTimeEl = document.getElementById("user-time");
+      const myTimeEl = document.getElementById("my-time");
+      if (!userTimeEl || !myTimeEl) return;
+
+      userTimeEl.textContent = now.toLocaleTimeString();
 
       const offset = isDaylightSavings(now) ? -4 : -5;
       const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
       const nyTime = new Date(utc + (3600000 * offset));
-      document.getElementById("my-time").textContent = nyTime.toLocaleTimeString();
+      myTimeEl.textContent = nyTime.toLocaleTimeString();
     }
 
-    updateTimes();
-    setInterval(updateTimes, 1000);
+    window.addEventListener("DOMContentLoaded", () => {
+      updateTimes();
+      setInterval(updateTimes, 1000);
+    });
   </script>
 
 </body>
