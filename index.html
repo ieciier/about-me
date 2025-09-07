@@ -11,9 +11,15 @@
   <h2>Click on themm</h2>
   <marquee>thanks for visiting my corner of the web ✧</marquee>
 
+  <!-- time for timing -->
+  <div class="time-box">
+    <p>My Time (EST): <span id="my-time"></span></p>
+    <p>Your Time: <span id="user-time"></span></p>
+  </div>
+
   <details class="section">
     <summary>About Me</summary>
-    <p>finish later</p>
+    <p>Hihi!! I'm iecii or Paige depending on how well you know me, I like run on sentances and I'm in EST.</p>
   </details>
 
   <details class="section">
@@ -30,6 +36,7 @@
     <summary>★ Social Links <span class="arrow">→</span></summary>
     <ul>
       <p>oh wait all my shit is on discord</p>
+      <p>oh wait this is only linked on my discord...</p>
       <li><a href="https://discord.com/users/725142964300546168" target="_blank">Discord</a></li>
     </ul>
   </details>
@@ -38,6 +45,24 @@
   <img src="images/house-md-love.gif" class="corner-gif top-left">
   <img src="images/pursuer-killer.gif" class="corner-gif top-right">
   <img src="images/artworks-idty4l58QzPrnL34-Q878RA-t500x500.jpg" class="corner-gif bottom-left">
+
+  <!-- Time Script -->
+  <script>
+    function updateTimes() {
+      const now = new Date();
+
+      // pls work
+      document.getElementById("user-time").textContent = now.toLocaleTimeString();
+
+      const estOffset = -5;
+      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
+      const estTime = new Date(utc + (3600000 * estOffset));
+      document.getElementById("my-time").textContent = estTime.toLocaleTimeString();
+    }
+
+    updateTimes();
+    setInterval(updateTimes, 1000);
+  </script>
 
 </body>
 </html>
