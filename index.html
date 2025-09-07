@@ -41,27 +41,25 @@
     </ul>
   </details>
 
-  <!-- Corner GIFs -->
+  <!-- shut up 🙏 -->
   <img src="images/house-md-love.gif" class="corner-gif top-left">
   <img src="images/pursuer-killer.gif" class="corner-gif top-right">
   <img src="images/artworks-idty4l58QzPrnL34-Q878RA-t500x500.jpg" class="corner-gif bottom-left">
 
-  <!-- Time Script -->
+  <!-- Time stuffs -->
   <script>
-    function updateTimes() {
-      const now = new Date();
+function updateTimes() {
+  const now = new Date();
 
-      // pls work
-      document.getElementById("user-time").textContent = now.toLocaleTimeString();
+  document.getElementById("user-time").textContent = now.toLocaleTimeString();
 
-      const estOffset = -5;
-      const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
-      const estTime = new Date(utc + (3600000 * estOffset));
-      document.getElementById("my-time").textContent = estTime.toLocaleTimeString();
-    }
+  // i would never steal time code
+  document.getElementById("my-time").textContent = now.toLocaleTimeString("en-US", { timeZone: "America/New_York" });
+}
 
-    updateTimes();
-    setInterval(updateTimes, 1000);
+updateTimes();
+setInterval(updateTimes, 1000);
+
   </script>
 
 </body>
