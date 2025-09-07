@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+  color: #ffccff;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+
+  background: url("images/dreamcore-windows-emojis-zd6n0o8f12ubi8qs.jpg") no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* filled borders & sections */
+.section, details.social-links, h1 {
+  display: inline-block;
+  border: 3px solid #ff66ff;
+  background: rgba(0, 0, 0, 0.5); /* filled background */
+  padding: 15px 25px;
+  margin: 10px auto;
+  border-radius: 12px;
+  text-align: center;
+}
+
+/* blinking title */
+h1 {
+  font-size: 2.5em;
+  color: #00ffff;
+  text-shadow: 2px 2px #ff00ff;
+  animation: blink 1s infinite alternate;
+}
+
+/* details/summary headings */
+details summary {
+  font-size: 1.8em;
+  color: #ffff66;
+  text-shadow: 1px 1px #ff00ff;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* expand content */
+details p, details ul {
+  margin-top: 10px;
+  color: #ffccff;
+  text-align: left;
+  font-size: 1em;
+}
+
+/* marquee */
+marquee {
+  color: #ff66ff;
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+/* social links */
+details.social-links summary .arrow {
+  display: inline-block;
+  margin-left: 10px;
+  animation: flash 1s infinite alternate;
+}
+
+details.social-links ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+details.social-links li {
+  margin: 5px 0;
+}
+
+details.social-links a {
+  color: #00ffff;
+  text-decoration: underline;
+}
+
+details.social-links a:hover {
+  color: #ff00ff;
+  text-decoration: none;
+}
+
+/* animations */
+@keyframes blink {
+  from { opacity: 1; }
+  to { opacity: 0.5; }
+}
+
+@keyframes flash {
+  from { color: #ff00ff; }
+  to { color: #00ffff; }
+}
+/* existing styles stay the same... */
+
+/* all GIFs */
+.corner-gif {
+  position: fixed;
+  width: 180px;
+  height: 180px;
+  z-index: 9999;
+}
+
+/* top-left floats/wobbles */
+.top-left {
+  top: 20px;
+  left: 10px;
+  animation: float 4s ease-in-out infinite alternate;
+}
+
+/* top-right spins */
+.top-right {
+  top: 50px;
+  right: 30px;
+  animation: spin 3s linear infinite;
+}
+
+/* bottom-left static */
+.bottom-left {
+  bottom: 40px;
+  left: 60px;
+}
+
+/* float/wobble animation */
+@keyframes float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(10px, -10px) rotate(-5deg); }
+  50% { transform: translate(-10px, 10px) rotate(5deg); }
+  75% { transform: translate(5px, -5px) rotate(-3deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* spin animation */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
