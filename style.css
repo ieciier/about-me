@@ -45,7 +45,6 @@ details p, details ul {
   font-size: 1em;
 }
 
-/* marquee */
 marquee {
   color: #ff66ff;
   font-size: 1.2em;
@@ -88,9 +87,7 @@ details.social-links a:hover {
   from { color: #ff00ff; }
   to { color: #00ffff; }
 }
-/* existing styles stay the same... */
 
-/* all GIFs */
 .corner-gif {
   position: fixed;
   width: 180px;
@@ -98,27 +95,23 @@ details.social-links a:hover {
   z-index: 9999;
 }
 
-/* top-left floats/wobbles */
 .top-left {
   top: 20px;
   left: 10px;
   animation: float 4s ease-in-out infinite alternate;
 }
 
-/* top-right spins */
 .top-right {
   top: 50px;
   right: 30px;
   animation: spin 3s linear infinite;
 }
-
-/* bottom-left static */
+/* lwk feel judged for my shit code*/
 .bottom-left {
   bottom: 40px;
   left: 60px;
 }
 
-/* float/wobble animation */
 @keyframes float {
   0% { transform: translate(0, 0) rotate(0deg); }
   25% { transform: translate(10px, -10px) rotate(-5deg); }
@@ -127,8 +120,19 @@ details.social-links a:hover {
   100% { transform: translate(0, 0) rotate(0deg); }
 }
 
-/* spin animation */
 @keyframes spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+.time-box {
+  display: inline-block;
+  border: 3px solid #ff66ff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  margin: 10px auto;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1.2em;
+  color: #00ffff;
+  text-shadow: 1px 1px #ff00ff;
 }
